@@ -1,0 +1,46 @@
+{
+	"name": "TempUserWordNames",
+	"version": "0.1",
+	"author": [
+		"[https://github.com/jayktaylor Jayden Bailey]",
+		"..."
+	],
+	"url": "https://weirdgloop.org",
+	"descriptionmsg": "tempuserwordnames-desc",
+	"license-name": "GPL-3.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\TempUserWordNames\\": "src/"
+	},
+	"MessagesDirs": {
+		"TempUserWordNames": [
+			"i18n"
+		]
+	},
+	"TempUserSerialMappings": {
+		"words": {
+			"class": "MediaWiki\\Extension\\TempUserWordNames\\TempUserWordNamesSerialMapping",
+			"services": [
+				"MainConfig"
+			]
+		}
+	},
+	"config": {
+		"TempUserWordNamesLength": {
+			"value": 3,
+			"description": "The number of words to use in the account name."
+		},
+		"TempUserWordNamesList": {
+			"value": [],
+			"description": "A list of words that can be picked at random."
+		},
+		"TempUserWordNamesUseIndex": {
+			"value": true,
+			"description": "Append the index to the generated account name to ensure uniqueness."
+		}
+	},
+	"manifest_version": 2
+}
