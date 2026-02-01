@@ -24,7 +24,10 @@
 		"words": {
 			"class": "MediaWiki\\Extension\\TempUserWordNames\\TempUserWordNamesSerialMapping",
 			"services": [
-				"MainConfig"
+				"MainConfig",
+				"MainWANObjectCache",
+				"RevisionStoreFactory",
+				"PageStoreFactory"
 			]
 		}
 	},
@@ -34,8 +37,15 @@
 			"description": "The number of words to use in the account name."
 		},
 		"TempUserWordNamesList": {
-			"value": [],
-			"description": "A list of words that can be picked at random."
+			"value": {
+				"page": "MediaWiki:TempUserWordList",
+				"words": null
+			},
+			"description": "The words used to generate a name. One of 'pages' or 'words' must contain values. See the README for more information."
+		},
+		"TempUserWordNamesCentralWiki": {
+			"value": null,
+			"description": "The central wiki to use for fetching the word list. If not set, the local wiki will be used."
 		},
 		"TempUserWordNamesUseIndex": {
 			"value": true,
